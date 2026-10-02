@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [Header("OBJECT SETUP")]
     [SerializeField] private GameObject turret;
     [SerializeField] private Camera PlayerCamera;
+    [SerializeField] private GameObject tankRound;
 
     [Header("TURRET")]
     [SerializeField] float turret_rotation_speed = 20f;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         movement();
+        fire_check();
         process_mouseaim();
     }
 
@@ -55,6 +57,16 @@ public class Player : MonoBehaviour
         PlayerCamera.transform.rotation = new Quaternion(0, 0, 0, 1);
     }
 
+    void fire_check()
+    {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            GameObject clone = GameObject.Instantiate(tankRound);
+            clone.transform.parent = null;
+            clone.transform.rotation = turret.transform.rotation;
+            clone.transform.position = turret.transform.position;
+        }
+    }
     void process_mouseaim()
     {
         //get mouse screen pos to rotate towards

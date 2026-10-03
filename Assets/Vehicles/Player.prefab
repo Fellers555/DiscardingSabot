@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5478722117989696596}
   - component: {fileID: 8516875433643576531}
   - component: {fileID: 797267709000910134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   PlayerCamera: {fileID: 722856329866090243}
   tankRound: {fileID: 0}
   turret_rotation_speed: 480
+  reload_rate: 180
   hull_rotation_speed: 120
   move_speed: 10
 --- !u!50 &8516875433643576531
@@ -199,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7211852712906854058}
   - component: {fileID: 8860138011912686777}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +294,7 @@ GameObject:
   - component: {fileID: 2378848766355876417}
   - component: {fileID: 2852579546296752517}
   - component: {fileID: 8327408372794605670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8668969087720134723}
   - component: {fileID: 1564888696095933995}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 239603116015111541}
   - component: {fileID: 4854733910424955793}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}

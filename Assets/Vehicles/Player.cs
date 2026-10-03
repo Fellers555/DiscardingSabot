@@ -12,8 +12,11 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject tankRound;
 
 
+
     [Header("TURRET")]
     [SerializeField] float turret_rotation_speed = 20f;
+    [SerializeField] float reload_rate = 180f;
+    float reload_timer = 0;
 
     [Header("HULL")]
     [SerializeField] float hull_rotation_speed = 120f;
@@ -70,12 +73,23 @@ public class Player : MonoBehaviour
 
     void fire_check()
     {
+
+        //Process reload
+        reload_timer = Mathf.Max(0f, reload_timer - (60 * Time.deltaTime));
+
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            GameObject clone = GameObject.Instantiate(tankRound);
-            clone.transform.parent = null;
-            clone.transform.rotation = turret.transform.rotation;
-            clone.transform.position = turret.transform.position;
+            if (reload_timer == 0f)
+            {
+                GameObject clone = GameObject.Instantiate(tankRound);
+                clone.transform.parent = null;
+                clone.transform.rotation = turret.transform.rotation;
+                clone.transform.position = turret.transform.position;
+                Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), clone.GetComponent<Collider2D>());
+
+                reload_timer = reload_rate;
+            }
+            
         }
     }
     void process_mouseaim()

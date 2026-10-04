@@ -41,5 +41,18 @@ public class TankRound : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        //Destroy and do damage to enemy
+        int vehicleLayer = LayerMask.NameToLayer("Vehicles");
+        if (collision.gameObject.layer == vehicleLayer)
+        {
+            //if enemy run enemy damage code
+            //we can expand this to classes; for later t90 and bmp will be different subclasses of this just inherit function
+            if (collision.gameObject.TryGetComponent(out EnemyTank enemyTank))
+            {
+                enemyTank.take_damage();
+            }
+            Destroy(gameObject);
+        }
     }
 }

@@ -11,8 +11,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Camera PlayerCamera;
     [SerializeField] private GameObject tankRound;
 
-
-
     [Header("TURRET")]
     [SerializeField] float turret_rotation_speed = 20f;
     [SerializeField] float reload_rate = 180f;
@@ -44,6 +42,10 @@ public class Player : MonoBehaviour
 
     void movement()
     {
+
+        //prevent sliding
+        rigidBody.linearVelocity = Vector2.zero;
+
         //rotate hull
         if (Keyboard.current.dKey.IsPressed())
         {

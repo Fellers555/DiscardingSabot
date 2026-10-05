@@ -226,6 +226,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   rigidBody: {fileID: 124207437340745967}
+  lineOfSightLayer:
+    serializedVersion: 2
+    m_Bits: 512
   hull_rotation_speed: 120
   move_speed: 0.75
 --- !u!61 &9065842550697662886

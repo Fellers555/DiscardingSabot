@@ -20,7 +20,11 @@ public class Player : MonoBehaviour
     [Header("HULL")]
     [SerializeField] float hull_rotation_speed = 120f;
     [SerializeField] float move_speed = .75f;
+    [SerializeField] float hp = 3.0f;
 
+    public enum STATUS {ALIVE, DEAD};
+    public STATUS state = STATUS.ALIVE;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,9 +35,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fire_check();
-        PlayerCamera.transform.rotation = new Quaternion(0, 0, 0, 1);
+        if (state == STATUS.ALIVE)
+        {
+            fire_check();
+        }
 
+        PlayerCamera.transform.rotation = Quaternion.Euler(0, 0, 180);
         // Restart test for debug
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
@@ -43,8 +50,11 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        process_mouseaim();
-        movement();
+        if (state == STATUS.ALIVE)
+        {
+            process_mouseaim();
+            movement();
+        }
     }
 
     void movement()
@@ -69,13 +79,13 @@ public class Player : MonoBehaviour
         //move forward/backwards
         if (Keyboard.current.wKey.IsPressed())
         {
-            Vector2 targetNextPosition = transform.position + (transform.up.normalized * move_speed * Time.fixedDeltaTime);
+            Vector2 targetNextPosition = transform.position + (-transform.right.normalized * move_speed * Time.fixedDeltaTime);
             rigidBody.MovePosition(targetNextPosition);
         }
 
         if (Keyboard.current.sKey.IsPressed())
         {
-            Vector2 targetNextPosition = transform.position + (transform.up.normalized * -move_speed * Time.fixedDeltaTime);
+            Vector2 targetNextPosition = transform.position + (-transform.right.normalized * -move_speed * Time.fixedDeltaTime);
             rigidBody.MovePosition(targetNextPosition);
         }
     }
@@ -94,6 +104,8 @@ public class Player : MonoBehaviour
                 clone.transform.parent = null;
                 clone.transform.rotation = turret.transform.rotation;
                 clone.transform.position = turret.transform.position;
+                var bullet_rot = clone.transform.rotation.eulerAngles + new Vector3(0, 0, 90);
+                clone.transform.rotation = Quaternion.Euler(bullet_rot);
                 Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), clone.GetComponent<Collider2D>());
 
                 reload_timer = reload_rate;
@@ -108,10 +120,15 @@ public class Player : MonoBehaviour
         Vector2 direction = aim_position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //provide correction angle offset and convertion to quaternion
-        angle -= 90;
+        angle += 180;
         Quaternion angle_quaternion = Quaternion.Euler(new Vector3(0, 0, angle));
 
         //execute rotation
         turret.transform.rotation = Quaternion.RotateTowards(turret.transform.rotation,angle_quaternion,turret_rotation_speed * Time.fixedDeltaTime);
+    }
+
+    public void take_damage()
+    {
+        hp -= 1;
     }
 }

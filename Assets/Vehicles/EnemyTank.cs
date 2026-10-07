@@ -13,6 +13,8 @@ public class EnemyTank : MonoBehaviour
     [SerializeField] float hull_rotation_speed = 120f;
     [SerializeField] float move_speed = .75f;
 
+    public enum AI_STATE {IDLE, ATTACK};
+    public AI_STATE ai_state = AI_STATE.IDLE;
 
     //Line of Sight
     private bool lineOfSight = false;
@@ -27,7 +29,14 @@ public class EnemyTank : MonoBehaviour
     {
         //show player for later los check
         GameObject player = GameObject.FindWithTag("Player");
-
+        //if player dead ignore
+        if (player.TryGetComponent(out Player playerTank))
+        {
+            if (playerTank.state == Player.STATUS.DEAD)
+            {
+                player = null;
+            }
+        }
         get_line_of_sight(player);
     }
 

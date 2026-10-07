@@ -52,6 +52,11 @@ public class TankRound : MonoBehaviour
             {
                 enemyTank.take_damage();
             }
+
+            if (collision.gameObject.TryGetComponent(out Player playerTank))
+            {
+                playerTank.take_damage();
+            }
             Destroy(gameObject);
         }
     }

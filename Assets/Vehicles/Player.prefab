@@ -112,10 +112,10 @@ MonoBehaviour:
   turret: {fileID: 9034482228701175847}
   PlayerCamera: {fileID: 722856329866090243}
   tankRound: {fileID: 8775748787667009997, guid: 429a41dd68f8ba84e9e7b465aadd0e82, type: 3}
-  turret_rotation_speed: 480
+  turret_rotation_speed: 360
   reload_rate: 180
   hull_rotation_speed: 120
-  move_speed: 10
+  move_speed: 4.75
   hp: 3
   state: 0
 --- !u!50 &8516875433643576531
@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 2378848766355876417}
   - component: {fileID: 2852579546296752517}
   - component: {fileID: 8327408372794605670}
+  - component: {fileID: 7740966091622087851}
   m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
@@ -261,7 +262,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: -10.1
+  orthographic size: -5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -347,6 +348,30 @@ RotationConstraint:
   m_Active: 1
   m_IsLocked: 1
   m_Sources: []
+--- !u!114 &7740966091622087851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4079262470003244046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
+  m_ComponentVersion: 1
+  m_AssetsPPU: 50
+  m_RefResolutionX: 1920
+  m_RefResolutionY: 1080
+  m_CropFrame: 0
+  m_GridSnapping: 0
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &9034482228701175847
 GameObject:
   m_ObjectHideFlags: 0

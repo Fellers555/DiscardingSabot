@@ -52,8 +52,8 @@ public class Player : MonoBehaviour
     {
         if (state == STATUS.ALIVE)
         {
-            process_mouseaim();
             movement();
+            process_mouseaim();
         }
     }
 

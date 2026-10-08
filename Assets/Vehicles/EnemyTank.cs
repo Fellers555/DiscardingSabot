@@ -25,7 +25,7 @@ public class EnemyTank : MonoBehaviour
         
     }
 
-    private void Update()
+    public virtual void Update()
     {
         //show player for later los check
         GameObject player = GameObject.FindWithTag("Player");
@@ -41,7 +41,7 @@ public class EnemyTank : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         //prevent sliding
         rigidBody.linearVelocity = Vector2.zero;
@@ -52,7 +52,7 @@ public class EnemyTank : MonoBehaviour
     }
 
     //damage function; add logic for ammo types here
-    public void take_damage()
+    public virtual void take_damage()
     {
         Destroy(gameObject);
         Debug.Log("TARGET DESTROYED!");

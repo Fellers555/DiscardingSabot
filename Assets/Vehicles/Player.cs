@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -20,27 +21,35 @@ public class Player : MonoBehaviour
     [Header("HULL")]
     [SerializeField] float hull_rotation_speed = 120f;
     [SerializeField] float move_speed = .75f;
+    [SerializeField] float hull_acceleration = .75f;
     [SerializeField] float hp = 3.0f;
+    Vector2 hull_velocity = Vector2.zero;
+    float hull_rotation_velocity = 0f;
 
     public enum STATUS {ALIVE, DEAD};
     public STATUS state = STATUS.ALIVE;
-    
+
+    //camera
+    float cam_shake_magnitude = 0f;
+    float shake_decrease_rate = 1f;
+    Vector3 camera_actual_position = Vector3.zero;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        camera_actual_position = PlayerCamera.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (state == STATUS.ALIVE)
         {
             fire_check();
         }
 
-        PlayerCamera.transform.rotation = Quaternion.Euler(0, 0, 180);
+        PlayerCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
         // Restart test for debug
         if (Keyboard.current.rKey.wasPressedThisFrame)
         {
@@ -54,6 +63,8 @@ public class Player : MonoBehaviour
         {
             movement();
             process_mouseaim();
+            camera_actual_position = new Vector3(rigidBody.transform.position.x,rigidBody.transform.position.y,PlayerCamera.transform.position.z);
+            process_camera_shake();
         }
     }
 
@@ -63,31 +74,38 @@ public class Player : MonoBehaviour
         //prevent sliding
         rigidBody.linearVelocity = Vector2.zero;
 
+
+        float desired_rotation = 0f;
+
         //rotate hull
         if (Keyboard.current.dKey.IsPressed())
         {
-            float newAngle = rigidBody.rotation - hull_rotation_speed * Time.fixedDeltaTime;
-            rigidBody.MoveRotation(newAngle);
+            desired_rotation = - hull_rotation_speed * Time.fixedDeltaTime;
         }
 
         if (Keyboard.current.aKey.IsPressed())
         {
-            float newAngle = rigidBody.rotation + hull_rotation_speed * Time.fixedDeltaTime;
-            rigidBody.MoveRotation(newAngle);
+            desired_rotation = +hull_rotation_speed * Time.fixedDeltaTime;
+
         }
+        hull_rotation_velocity = Mathf.Lerp(hull_rotation_velocity, desired_rotation, hull_acceleration * Time.fixedDeltaTime);
+        rigidBody.MoveRotation(rigidBody.rotation + hull_rotation_velocity);
+
+        Vector2 desired_velocity = Vector2.zero;
 
         //move forward/backwards
         if (Keyboard.current.wKey.IsPressed())
         {
-            Vector2 targetNextPosition = transform.position + (-transform.right.normalized * move_speed * Time.fixedDeltaTime);
-            rigidBody.MovePosition(targetNextPosition);
+            desired_velocity = (transform.up.normalized * move_speed * Time.fixedDeltaTime);
         }
 
         if (Keyboard.current.sKey.IsPressed())
         {
-            Vector2 targetNextPosition = transform.position + (-transform.right.normalized * -move_speed * Time.fixedDeltaTime);
-            rigidBody.MovePosition(targetNextPosition);
+            desired_velocity = (transform.up.normalized * -move_speed * Time.fixedDeltaTime);
         }
+
+        hull_velocity = Vector2.Lerp(hull_velocity,desired_velocity,Time.fixedDeltaTime * hull_acceleration);
+        rigidBody.MovePosition(new Vector2(transform.position.x, transform.position.y) + hull_velocity);
     }
 
     void fire_check()
@@ -100,12 +118,11 @@ public class Player : MonoBehaviour
         {
             if (reload_timer == 0f)
             {
+                start_camera_shake(6.5f);
                 GameObject clone = GameObject.Instantiate(tankRound);
                 clone.transform.parent = null;
                 clone.transform.rotation = turret.transform.rotation;
                 clone.transform.position = turret.transform.position;
-                var bullet_rot = clone.transform.rotation.eulerAngles + new Vector3(0, 0, 90);
-                clone.transform.rotation = Quaternion.Euler(bullet_rot);
                 Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), clone.GetComponent<Collider2D>());
 
                 reload_timer = reload_rate;
@@ -120,7 +137,7 @@ public class Player : MonoBehaviour
         Vector2 direction = aim_position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //provide correction angle offset and convertion to quaternion
-        angle += 180;
+        angle -= 90;
         Quaternion angle_quaternion = Quaternion.Euler(new Vector3(0, 0, angle));
 
         //execute rotation
@@ -130,5 +147,21 @@ public class Player : MonoBehaviour
     public void take_damage()
     {
         hp -= 1;
+    }
+
+    public void start_camera_shake(float _magnitude)
+    {
+        if (_magnitude >= cam_shake_magnitude)
+        {
+            cam_shake_magnitude = _magnitude;
+        }
+    }
+
+    void process_camera_shake()
+    {
+        PlayerCamera.transform.position = camera_actual_position;
+        cam_shake_magnitude = MathF.Max(cam_shake_magnitude - (Time.fixedDeltaTime * 60 * shake_decrease_rate), 0f);
+        float to_shake = cam_shake_magnitude / 50f;
+        PlayerCamera.transform.position += new Vector3(UnityEngine.Random.Range(-to_shake, to_shake),UnityEngine.Random.Range(-to_shake, to_shake),0);
     }
 }

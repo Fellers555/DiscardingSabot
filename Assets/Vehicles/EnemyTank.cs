@@ -6,8 +6,13 @@ public class EnemyTank : MonoBehaviour
 {
 
     [Header("COMPONENTS")]
-    [SerializeField] private Rigidbody2D rigidBody;
+    [SerializeField] public Rigidbody2D rigidBody;
     [SerializeField] private LayerMask lineOfSightLayer;
+
+
+    [Header("REACTION TIME")]
+    [SerializeField] float reaction_time = 35f;
+    float reaction_timer;
 
     [Header("HULL")]
     [SerializeField] float hull_rotation_speed = 120f;
@@ -22,22 +27,12 @@ public class EnemyTank : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        reaction_timer = reaction_time;
     }
 
     public virtual void Update()
     {
-        //show player for later los check
-        GameObject player = GameObject.FindWithTag("Player");
-        //if player dead ignore
-        if (player.TryGetComponent(out Player playerTank))
-        {
-            if (playerTank.state == Player.STATUS.DEAD)
-            {
-                player = null;
-            }
-        }
-        get_line_of_sight(player);
+
     }
 
     // Update is called once per frame
@@ -58,8 +53,21 @@ public class EnemyTank : MonoBehaviour
         Debug.Log("TARGET DESTROYED!");
     }
 
-    void get_line_of_sight(GameObject _target)
+    public bool get_line_of_sight(GameObject _target)
     {
-        lineOfSight = !Physics2D.Linecast(_target.transform.position, transform.position, lineOfSightLayer);
+        bool actual_los = !Physics2D.Linecast(_target.transform.position, transform.position, lineOfSightLayer);
+        if (actual_los)
+        {
+            reaction_timer = Mathf.Max(0f, reaction_timer - (60 * Time.deltaTime));
+            if (reaction_timer == 0)
+            {
+                return true;
+            }
+        }
+        else
+        {
+            reaction_timer = reaction_time;
+        }
+        return false;
     }
 }

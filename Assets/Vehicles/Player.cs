@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
 
         if (state == STATUS.ALIVE)
         {
+            process_mouseaim();
             fire_check();
         }
 
@@ -62,7 +63,6 @@ public class Player : MonoBehaviour
         if (state == STATUS.ALIVE)
         {
             movement();
-            process_mouseaim();
             camera_actual_position = new Vector3(rigidBody.transform.position.x,rigidBody.transform.position.y,PlayerCamera.transform.position.z);
             process_camera_shake();
         }
@@ -132,6 +132,11 @@ public class Player : MonoBehaviour
     }
     void process_mouseaim()
     {
+
+        Vector3 save_cam_pos = PlayerCamera.transform.position;
+
+        PlayerCamera.transform.position = new Vector3(rigidBody.transform.position.x, rigidBody.transform.position.y, PlayerCamera.transform.position.z);
+
         //get mouse screen pos to rotate towards
         Vector3 aim_position = PlayerCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         Vector2 direction = aim_position - transform.position;
@@ -141,7 +146,9 @@ public class Player : MonoBehaviour
         Quaternion angle_quaternion = Quaternion.Euler(new Vector3(0, 0, angle));
 
         //execute rotation
-        turret.transform.rotation = Quaternion.RotateTowards(turret.transform.rotation,angle_quaternion,turret_rotation_speed * Time.fixedDeltaTime);
+        turret.transform.rotation = Quaternion.RotateTowards(turret.transform.rotation,angle_quaternion,turret_rotation_speed * Time.deltaTime);
+
+        PlayerCamera.transform.position = save_cam_pos;
     }
 
     public void take_damage()

@@ -1,22 +1,33 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 //Dervies from basic enemy class; BMP will as well
 public class T90 : EnemyTank
 {
-    [SerializeField] private TextMeshPro ai_state_debug_text;
+    public enum ATTACK_MOVEMENT_STATE { STILL, TURN, DRIVE };
+    public ATTACK_MOVEMENT_STATE attack_movement_state = ATTACK_MOVEMENT_STATE.STILL;
+    bool attack_state_rand_bool = false;
+    float state_timer = 0f;
+    float state_timer_min = 24f;
+    float state_timer_max = 64f;
 
     [Header("TURRET")]
+    [SerializeField] private GameObject tankRound;
     [SerializeField] private GameObject turret;
     [SerializeField] float turret_rotation_speed = 20f;
+    [SerializeField] float firing_delay = 35f;
+    float firing_delay_timer = 35f;
 
     [SerializeField] float reload_rate = 180f;
+    float reload_timer = 0f;
     Quaternion turret_desired_rotation;
-    private bool lineOfSight = false;
 
     void Start()
     {
-        
+        firing_delay_timer = firing_delay;
     }
 
     public override void Update()
@@ -29,11 +40,15 @@ public class T90 : EnemyTank
             if (playerTank.state == Player.STATUS.DEAD)
             {
                 player = null;
+                ai_state = AI_STATE.IDLE;
             }
         }
 
         //GATHER LINE OF SIGHT ON PLAYEr
         lineOfSight = get_line_of_sight(player);
+
+        //RELOAD WEAPON
+        reload_timer = Mathf.Max(0f, reload_timer - (60 * Time.deltaTime));
 
         //EXECUTE STATE MACHINE
         switch (ai_state) {
@@ -48,22 +63,101 @@ public class T90 : EnemyTank
                 if (lineOfSight)
                 {
                     set_turret_rotation(player.transform.position);
+                    firing_delay_timer = Mathf.Max(0f, firing_delay_timer - Time.deltaTime * 60);
+                    if (firing_delay_timer == 0) {
+                        attempt_fire();
+                    }
+                }
+                else
+                {
+                    firing_delay_timer = firing_delay;
+                }
+
+                //Movement substate machine; actual movement code is loacted in fixed update
+                state_timer = Mathf.Max(0f, state_timer - Time.deltaTime * 60);
+                if (state_timer == 0) {
+                    pick_random_attack_state();
                 }
                 break;
         }
 
         process_turret_rotation();
-
-        //Debug;
-        ai_state_debug_text.text = ai_state.ToString();
     }
         
 
     public override void FixedUpdate()
     {
 
+        //reset movement vars
+        float desired_rotation = 0f;
+        Vector2 desired_velocity = Vector2.zero;
+
+        switch (ai_state)
+        {
+            case AI_STATE.IDLE:
+                break;
+
+            case AI_STATE.ATTACK:
+                //execute movement based on state
+                switch (attack_movement_state)
+                {
+                    case ATTACK_MOVEMENT_STATE.STILL:
+                        break;
+
+                    case ATTACK_MOVEMENT_STATE.TURN:
+                        if (attack_state_rand_bool)
+                        {
+                            desired_rotation = hull_rotation_speed * Time.fixedDeltaTime;
+                        }
+                        else {
+                            desired_rotation = -hull_rotation_speed * Time.fixedDeltaTime;
+                        }
+                        break;
+
+                    case ATTACK_MOVEMENT_STATE.DRIVE:
+                        if (attack_state_rand_bool) {
+                            desired_velocity = (transform.up.normalized * move_speed * Time.fixedDeltaTime);
+                        }
+                        else
+                        {
+                            desired_velocity = (transform.up.normalized * -move_speed * Time.fixedDeltaTime);
+                        }
+                        break;
+                }
+                break;
+        }
+
+        //process turn and move
+        hull_rotation_velocity = Mathf.Lerp(hull_rotation_velocity, desired_rotation, hull_acceleration * Time.fixedDeltaTime);
+        rigidBody.MoveRotation(rigidBody.rotation + hull_rotation_velocity);
+
+        hull_velocity = Vector2.Lerp(hull_velocity, desired_velocity, Time.fixedDeltaTime * hull_acceleration);
+        rigidBody.MovePosition(new Vector2(transform.position.x, transform.position.y) + hull_velocity);
     }
 
+    private void attempt_fire()
+    {
+
+        float diff = Mathf.DeltaAngle(turret.transform.rotation.eulerAngles.z, turret_desired_rotation.eulerAngles.z);
+
+        if ((reload_timer == 0f) && (diff < 10))
+        {
+            GameObject clone = GameObject.Instantiate(tankRound);
+            clone.transform.parent = null;
+            clone.transform.rotation = turret.transform.rotation;
+            clone.transform.position = turret.transform.position;
+            Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), clone.GetComponent<Collider2D>());
+
+            reload_timer = reload_rate;
+        }
+    }
+
+    private void pick_random_attack_state()
+    {
+        state_timer = UnityEngine.Random.Range(state_timer_min, state_timer_max);
+        attack_movement_state = (ATTACK_MOVEMENT_STATE)UnityEngine.Random.Range(0,3);
+        attack_state_rand_bool = UnityEngine.Random.value > 0.5f;
+    }
 
     private void set_turret_rotation(Vector3 _position)
     {

@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,6 +13,11 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject turret;
     [SerializeField] private Camera PlayerCamera;
     [SerializeField] private GameObject tankRound;
+
+    [SerializeField] private Animator turretAnim;
+
+    [SerializeField] private TextMeshProUGUI HUD_HP;
+    [SerializeField] private TextMeshProUGUI HUD_RELOAD;
 
     [Header("TURRET")]
     [SerializeField] float turret_rotation_speed = 20f;
@@ -48,6 +54,23 @@ public class Player : MonoBehaviour
         {
             process_mouseaim();
             fire_check();
+
+            if (reload_timer == 0)
+            {
+                HUD_RELOAD.text = "GUN READY";
+            }
+            else
+            {
+                HUD_RELOAD.text = "RELOADING";
+            }
+
+
+            HUD_HP.text = "HP: " + hp.ToString();
+        }
+        else
+        {
+            HUD_RELOAD.text = "";
+            HUD_HP.text = "MISSION KILL - PRESS R";
         }
 
         PlayerCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -64,8 +87,8 @@ public class Player : MonoBehaviour
         {
             movement();
             camera_actual_position = new Vector3(rigidBody.transform.position.x,rigidBody.transform.position.y,PlayerCamera.transform.position.z);
-            process_camera_shake();
         }
+        process_camera_shake();
     }
 
     void movement()
@@ -118,6 +141,9 @@ public class Player : MonoBehaviour
         {
             if (reload_timer == 0f)
             {
+
+                turretAnim.SetBool("firing", true);
+
                 start_camera_shake(6.5f);
                 GameObject clone = GameObject.Instantiate(tankRound);
                 clone.transform.parent = null;
@@ -154,6 +180,12 @@ public class Player : MonoBehaviour
     public void take_damage()
     {
         hp -= 1;
+        Debug.Log("PLAYER HIT!");
+        start_camera_shake(11.5f);
+        if (hp == 0)
+        {
+            state = STATUS.DEAD;
+        }
     }
 
     public void start_camera_shake(float _magnitude)

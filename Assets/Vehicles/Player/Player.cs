@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,10 @@ public class Player : MonoBehaviour
     [Header("TURRET")]
     [SerializeField] float turret_rotation_speed = 20f;
     [SerializeField] float reload_rate = 180f;
+    [SerializeField] AudioSource audioPlayer;
+    [SerializeField] AudioClip firingSound;
+    [SerializeField] GameObject muzzleFlash;
+    [SerializeField] GameObject muzzle;
     float reload_timer = 0;
 
     [Header("HULL")]
@@ -29,6 +34,7 @@ public class Player : MonoBehaviour
     [SerializeField] float move_speed = .75f;
     [SerializeField] float hull_acceleration = .75f;
     [SerializeField] float hp = 3.0f;
+    [SerializeField] AudioClip impactSound;
     Vector2 hull_velocity = Vector2.zero;
     float hull_rotation_velocity = 0f;
 
@@ -141,8 +147,15 @@ public class Player : MonoBehaviour
         {
             if (reload_timer == 0f)
             {
-
+                audioPlayer.pitch = UnityEngine.Random.Range(.95f, 1.05f);
+                audioPlayer.PlayOneShot(firingSound);
                 turretAnim.SetBool("firing", true);
+
+
+                GameObject flash = GameObject.Instantiate(muzzleFlash,muzzle.transform);
+                flash.transform.parent = muzzle.transform;
+                flash.transform.rotation = turret.transform.rotation;
+                flash.transform.position = muzzle.transform.position;
 
                 start_camera_shake(6.5f);
                 GameObject clone = GameObject.Instantiate(tankRound);
@@ -179,6 +192,10 @@ public class Player : MonoBehaviour
 
     public void take_damage()
     {
+
+        audioPlayer.pitch = UnityEngine.Random.Range(.75f, .77f);
+        audioPlayer.PlayOneShot(impactSound);
+
         hp -= 1;
         Debug.Log("PLAYER HIT!");
         start_camera_shake(11.5f);

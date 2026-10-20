@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 8607805477243338264}
   m_Layer: 8
   m_Name: T90
-  m_TagString: WorldGeometry
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

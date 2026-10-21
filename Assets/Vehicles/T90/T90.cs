@@ -19,6 +19,10 @@ public class T90 : EnemyTank
     [SerializeField] private GameObject turret;
     [SerializeField] float turret_rotation_speed = 20f;
     [SerializeField] float firing_delay = 35f;
+
+    [SerializeField] GameObject muzzleFlash;
+    [SerializeField] GameObject muzzle;
+
     float firing_delay_timer = 35f;
 
     [SerializeField] float reload_rate = 180f;
@@ -142,6 +146,11 @@ public class T90 : EnemyTank
 
         if ((reload_timer == 0f) && (diff < 10))
         {
+            GameObject flash = GameObject.Instantiate(muzzleFlash, muzzle.transform);
+            flash.transform.parent = muzzle.transform;
+            flash.transform.rotation = turret.transform.rotation;
+            flash.transform.position = muzzle.transform.position;
+
             GameObject clone = GameObject.Instantiate(tankRound);
             clone.transform.parent = null;
             clone.transform.rotation = turret.transform.rotation;

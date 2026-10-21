@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject turret;
     [SerializeField] private Camera PlayerCamera;
     [SerializeField] private GameObject tankRound;
+    [SerializeField] private GameObject crosshair;
 
     [SerializeField] private Animator turretAnim;
 
@@ -165,6 +166,12 @@ public class Player : MonoBehaviour
                 Physics2D.IgnoreCollision(this.GetComponent<Collider2D>(), clone.GetComponent<Collider2D>());
 
                 reload_timer = reload_rate;
+
+                //Start reload animation on crosshair
+                if (crosshair.TryGetComponent(out crosshair crosshairObj))
+                {
+                    crosshairObj.start_reload();
+                }
             }
             
         }

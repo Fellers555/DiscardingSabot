@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
 
+    [SerializeField] Player playersTank;
     bool enemiesLeft = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,6 +21,10 @@ public class GameState : MonoBehaviour
             {
                 enemiesLeft = false;
                 Debug.Log("ALL ENEMIES DESTROYED!");
+            }
+            if (playersTank.gameObject.TryGetComponent(out Player playerTank))
+            {
+                playerTank.updateEnemyCount(enemies.Length);
             }
         }
         

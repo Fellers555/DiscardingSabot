@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f834ba93382f7194d8e558e1ed7da50d
+guid: 838ff5e93bfa5bf4fac9100a38709fbc
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -26,24 +26,6 @@ TextureImporter:
   - first:
       213: -7828498899965475947
     second: AbramsCursor-Sheet_7
-  - first:
-      213: 3446271570686193047
-    second: AbramsCursor-Sheet_8
-  - first:
-      213: -646839075266472319
-    second: AbramsCursor-Sheet_9
-  - first:
-      213: -7564328994204364792
-    second: AbramsCursor-Sheet_10
-  - first:
-      213: 3803311863750503964
-    second: AbramsCursor-Sheet_11
-  - first:
-      213: 7476334178808753166
-    second: AbramsCursor-Sheet_12
-  - first:
-      213: -1411922720772166325
-    second: AbramsCursor-Sheet_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -90,7 +72,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -157,8 +139,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +159,10 @@ TextureImporter:
       name: AbramsCursor-Sheet_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 64
         y: 0
-        width: 256
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,10 +181,10 @@ TextureImporter:
       name: AbramsCursor-Sheet_2
       rect:
         serializedVersion: 2
-        x: 512
+        x: 128
         y: 0
-        width: 256
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,10 +203,10 @@ TextureImporter:
       name: AbramsCursor-Sheet_3
       rect:
         serializedVersion: 2
-        x: 768
+        x: 192
         y: 0
-        width: 256
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,10 +225,10 @@ TextureImporter:
       name: AbramsCursor-Sheet_4
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 256
         y: 0
-        width: 256
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +247,10 @@ TextureImporter:
       name: AbramsCursor-Sheet_5
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 320
         y: 0
-        width: 256
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,10 +269,10 @@ TextureImporter:
       name: AbramsCursor-Sheet_6
       rect:
         serializedVersion: 2
-        x: 1536
+        x: 384
         y: 0
-        width: 256
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,10 +291,10 @@ TextureImporter:
       name: AbramsCursor-Sheet_7
       rect:
         serializedVersion: 2
-        x: 1792
+        x: 448
         y: 0
-        width: 256
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,143 +309,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: AbramsCursor-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 256
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79d27420cbd93df20800000000000000
-      internalID: 3446271570686193047
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AbramsCursor-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 2304
-        y: 0
-        width: 256
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb13da59169d008478a738f03d05f18c
-      internalID: -646839075266472319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AbramsCursor-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 256
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b56b4ab1e6fdc1d419db1b3ccd41165d
-      internalID: -7564328994204364792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AbramsCursor-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 2816
-        y: 0
-        width: 256
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91bfdb9fc1c22754c97ad09aff5d502f
-      internalID: 3803311863750503964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AbramsCursor-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 3072
-        y: 0
-        width: 256
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97f207708d8ebe74e8e0c796cdce677a
-      internalID: 7476334178808753166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AbramsCursor-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 3328
-        y: 0
-        width: 256
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b24f734fde3036a4d966692fe90d4d49
-      internalID: -1411922720772166325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 484a7b4c502710f4f8fad91095b8dcf3
+    spriteID: d5095d7f4a468fe498a0f91c962dfa7b
     internalID: 0
     vertices: []
     indices: 
@@ -473,22 +323,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       AbramsCursor-Sheet_0: -725998397133761763
       AbramsCursor-Sheet_1: -8203337497741535703
-      AbramsCursor-Sheet_10: -7564328994204364792
-      AbramsCursor-Sheet_11: 3803311863750503964
-      AbramsCursor-Sheet_12: 7476334178808753166
-      AbramsCursor-Sheet_13: -1411922720772166325
       AbramsCursor-Sheet_2: 5427867741884090869
       AbramsCursor-Sheet_3: -6237444519380303259
       AbramsCursor-Sheet_4: 6523706916666087892
       AbramsCursor-Sheet_5: -6195657884512230638
       AbramsCursor-Sheet_6: 8992765003858884122
       AbramsCursor-Sheet_7: -7828498899965475947
-      AbramsCursor-Sheet_8: 3446271570686193047
-      AbramsCursor-Sheet_9: -646839075266472319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

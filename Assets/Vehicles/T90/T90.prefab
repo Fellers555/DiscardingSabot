@@ -99,6 +99,7 @@ Transform:
   m_Children:
   - {fileID: 8618779761671156257}
   - {fileID: 8511835422412831761}
+  - {fileID: 6336362501520438411}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2212027106628537916
@@ -185,6 +186,9 @@ MonoBehaviour:
   move_speed: 1.75
   hull_acceleration: 13
   attack_movement_state: 0
+  smoke: {fileID: 1777219544131075687, guid: a6e19faaaa8016347b98e794a158c92c, type: 3}
+  smokeEmitter: {fileID: 8343466939338659496}
+  smokeInterval: 6
   tankRound: {fileID: 8775748787667009997, guid: 429a41dd68f8ba84e9e7b465aadd0e82, type: 3}
   turret: {fileID: 2594184051586334561}
   turret_rotation_speed: 200
@@ -265,6 +269,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.65, y: 1.18}
   m_EdgeRadius: 0
+--- !u!1 &8343466939338659496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6336362501520438411}
+  m_Layer: 0
+  m_Name: Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6336362501520438411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343466939338659496}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 62305899617031126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8772601631675734912
 GameObject:
   m_ObjectHideFlags: 0

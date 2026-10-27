@@ -14,6 +14,12 @@ public class T90 : EnemyTank
     float state_timer_min = 24f;
     float state_timer_max = 64f;
 
+    [Header("ENGINE SMOKE")]
+    [SerializeField] private GameObject smoke;
+    [SerializeField] private GameObject smokeEmitter;
+    [SerializeField] private float smokeInterval = 5f;
+    private float smokeIntervalTimer = 0f;
+
     [Header("TURRET")]
     [SerializeField] private GameObject tankRound;
     [SerializeField] private GameObject turret;
@@ -85,6 +91,8 @@ public class T90 : EnemyTank
                 break;
         }
 
+        emit_smoke();
+
         process_turret_rotation();
     }
         
@@ -144,7 +152,7 @@ public class T90 : EnemyTank
 
         float diff = Mathf.DeltaAngle(turret.transform.rotation.eulerAngles.z, turret_desired_rotation.eulerAngles.z);
 
-        if ((reload_timer == 0f) && (diff < 10))
+        if ((reload_timer == 0f) && (Mathf.Abs(diff) < 10))
         {
             GameObject flash = GameObject.Instantiate(muzzleFlash, muzzle.transform);
             flash.transform.parent = muzzle.transform;
@@ -189,5 +197,18 @@ public class T90 : EnemyTank
     {
         base.take_damage();
         Debug.Log("T90 DESTROYED!");
+    }
+
+    void emit_smoke()
+    {
+        smokeIntervalTimer = Mathf.Max(smokeIntervalTimer - 60 * Time.deltaTime, 0f);
+        if (smokeIntervalTimer == 0)
+        {
+            smokeIntervalTimer = smokeInterval;
+            GameObject smoke_part = GameObject.Instantiate(smoke, null);
+            smoke_part.transform.parent = null;
+            smoke_part.transform.position = smokeEmitter.transform.position;
+            smoke_part.transform.rotation = Quaternion.Euler(turret.transform.rotation.eulerAngles + new Vector3(0, 0, UnityEngine.Random.Range(0, 360)));
+        }
     }
 }

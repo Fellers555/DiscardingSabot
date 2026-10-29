@@ -26,6 +26,7 @@ public class T90 : EnemyTank
     [SerializeField] float turret_rotation_speed = 20f;
     [SerializeField] float firing_delay = 35f;
 
+    [SerializeField] AudioSource audioPlayer;
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject muzzle;
 
@@ -154,6 +155,9 @@ public class T90 : EnemyTank
 
         if ((reload_timer == 0f) && (Mathf.Abs(diff) < 10))
         {
+
+            audioPlayer.Play();
+
             GameObject flash = GameObject.Instantiate(muzzleFlash, muzzle.transform);
             flash.transform.parent = muzzle.transform;
             flash.transform.rotation = turret.transform.rotation;

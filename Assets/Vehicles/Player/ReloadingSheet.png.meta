@@ -1,0 +1,1124 @@
+fileFormatVersion: 2
+guid: a0b273319229af74ab4dc8881c1e561c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6950330100330285135
+    second: ReloadingSheet_0
+  - first:
+      213: -652629208030933066
+    second: ReloadingSheet_1
+  - first:
+      213: 3512230866169535897
+    second: ReloadingSheet_2
+  - first:
+      213: 6873120811589423525
+    second: ReloadingSheet_3
+  - first:
+      213: -8168213604311767309
+    second: ReloadingSheet_4
+  - first:
+      213: -7224542254171659219
+    second: ReloadingSheet_5
+  - first:
+      213: 6748998132036074028
+    second: ReloadingSheet_6
+  - first:
+      213: -5072902735255459206
+    second: ReloadingSheet_7
+  - first:
+      213: 3997894703450562493
+    second: ReloadingSheet_8
+  - first:
+      213: 3699084693913579081
+    second: ReloadingSheet_9
+  - first:
+      213: -3928692279442039602
+    second: ReloadingSheet_10
+  - first:
+      213: 5986181231303759817
+    second: ReloadingSheet_11
+  - first:
+      213: -3783637690644489000
+    second: ReloadingSheet_12
+  - first:
+      213: -7032494604492924927
+    second: ReloadingSheet_13
+  - first:
+      213: 6959003987348508484
+    second: ReloadingSheet_14
+  - first:
+      213: -1065751286727672412
+    second: ReloadingSheet_15
+  - first:
+      213: -840269230462546488
+    second: ReloadingSheet_16
+  - first:
+      213: 464202627931564811
+    second: ReloadingSheet_17
+  - first:
+      213: -328752184907932339
+    second: ReloadingSheet_18
+  - first:
+      213: 6278621355892150160
+    second: ReloadingSheet_19
+  - first:
+      213: -1029359937437266714
+    second: ReloadingSheet_20
+  - first:
+      213: -3173103177258662827
+    second: ReloadingSheet_21
+  - first:
+      213: 8374556568034942505
+    second: ReloadingSheet_22
+  - first:
+      213: -7276892261738266207
+    second: ReloadingSheet_23
+  - first:
+      213: 1009100403149678604
+    second: ReloadingSheet_24
+  - first:
+      213: 9075194528061900260
+    second: ReloadingSheet_25
+  - first:
+      213: -5546602119871221432
+    second: ReloadingSheet_26
+  - first:
+      213: 7089134272908249025
+    second: ReloadingSheet_27
+  - first:
+      213: -2882898671070141192
+    second: ReloadingSheet_28
+  - first:
+      213: -1274844532652423576
+    second: ReloadingSheet_29
+  - first:
+      213: 3253140269181961332
+    second: ReloadingSheet_30
+  - first:
+      213: -6873751729509648132
+    second: ReloadingSheet_31
+  - first:
+      213: -1071166034127952116
+    second: ReloadingSheet_32
+  - first:
+      213: -6590597232116782882
+    second: ReloadingSheet_33
+  - first:
+      213: 980299918062907487
+    second: ReloadingSheet_34
+  - first:
+      213: 3390412512952767073
+    second: ReloadingSheet_35
+  - first:
+      213: -2006832105081609878
+    second: ReloadingSheet_36
+  - first:
+      213: 6074511752640250924
+    second: ReloadingSheet_37
+  - first:
+      213: 5044709805577840799
+    second: ReloadingSheet_38
+  - first:
+      213: 3859573792070201293
+    second: ReloadingSheet_39
+  - first:
+      213: -9108180633183983293
+    second: ReloadingSheet_40
+  - first:
+      213: 6263994265416927141
+    second: ReloadingSheet_41
+  - first:
+      213: -8548131166727082176
+    second: ReloadingSheet_42
+  - first:
+      213: 2581841271550649256
+    second: ReloadingSheet_43
+  - first:
+      213: 5505010383242289784
+    second: ReloadingSheet_44
+  - first:
+      213: -2155316463329447475
+    second: ReloadingSheet_45
+  - first:
+      213: 2057153483722162649
+    second: ReloadingSheet_46
+  - first:
+      213: 9153895099281807082
+    second: ReloadingSheet_47
+  - first:
+      213: -4411971243200352600
+    second: ReloadingSheet_48
+  - first:
+      213: 8675979479394563781
+    second: ReloadingSheet_49
+  - first:
+      213: 3571586511911312321
+    second: ReloadingSheet_50
+  - first:
+      213: -8857371145933246705
+    second: ReloadingSheet_51
+  - first:
+      213: -7580642023395829606
+    second: ReloadingSheet_52
+  - first:
+      213: 8675171643555884770
+    second: ReloadingSheet_53
+  - first:
+      213: -1967206980071516522
+    second: ReloadingSheet_54
+  - first:
+      213: 6425905937227608659
+    second: ReloadingSheet_55
+  - first:
+      213: -2913225582882243499
+    second: ReloadingSheet_56
+  - first:
+      213: -5845793010336978039
+    second: ReloadingSheet_57
+  - first:
+      213: -8562928954342393028
+    second: ReloadingSheet_58
+  - first:
+      213: 314206900297307391
+    second: ReloadingSheet_59
+  - first:
+      213: 255651477213448923
+    second: ReloadingSheet_60
+  - first:
+      213: -7683560855782616897
+    second: ReloadingSheet_61
+  - first:
+      213: -4070292470831654003
+    second: ReloadingSheet_62
+  - first:
+      213: 8731811712006798890
+    second: ReloadingSheet_63
+  - first:
+      213: -6461393812732640487
+    second: ReloadingSheet_64
+  - first:
+      213: 2767404523273255774
+    second: ReloadingSheet_65
+  - first:
+      213: 2004337631157878372
+    second: ReloadingSheet_66
+  - first:
+      213: -1789658404099448189
+    second: ReloadingSheet_67
+  - first:
+      213: 332409322136379655
+    second: ReloadingSheet_68
+  - first:
+      213: 2982824236421439760
+    second: ReloadingSheet_69
+  - first:
+      213: 5653415131884430184
+    second: ReloadingSheet_70
+  - first:
+      213: 5399489494333980111
+    second: ReloadingSheet_71
+  - first:
+      213: 3392784401083921321
+    second: ReloadingSheet_72
+  - first:
+      213: -3735691238319651572
+    second: ReloadingSheet_73
+  - first:
+      213: 2910112328637528443
+    second: ReloadingSheet_74
+  - first:
+      213: -5090918406212804946
+    second: ReloadingSheet_75
+  - first:
+      213: -1044683171730375640
+    second: ReloadingSheet_76
+  - first:
+      213: -5370922646840572706
+    second: ReloadingSheet_77
+  - first:
+      213: 5539708976554741633
+    second: ReloadingSheet_78
+  - first:
+      213: -6945531702851750707
+    second: ReloadingSheet_79
+  - first:
+      213: -9203228344246522430
+    second: ReloadingSheet_80
+  - first:
+      213: -133119918811410091
+    second: ReloadingSheet_81
+  - first:
+      213: 4540330262486429160
+    second: ReloadingSheet_82
+  - first:
+      213: 8815644929277476598
+    second: ReloadingSheet_83
+  - first:
+      213: 4551999851176485055
+    second: ReloadingSheet_84
+  - first:
+      213: -6751693832234959248
+    second: ReloadingSheet_85
+  - first:
+      213: -2966352537959478324
+    second: ReloadingSheet_86
+  - first:
+      213: 821550750826781908
+    second: ReloadingSheet_87
+  - first:
+      213: -1603680298881345353
+    second: ReloadingSheet_88
+  - first:
+      213: -3136907185006470189
+    second: ReloadingSheet_89
+  - first:
+      213: -4057298035546416226
+    second: ReloadingSheet_90
+  - first:
+      213: 8698127793201221895
+    second: ReloadingSheet_91
+  - first:
+      213: 8738908900410675365
+    second: ReloadingSheet_92
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ReloadingSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4844edd668847060800000000000000
+      internalID: 6950330100330285135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf854d613561f6f0800000000000000
+      internalID: -652629208030933066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d923b3d53fdb030800000000000000
+      internalID: 3512230866169535897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a1d12976fa326f50800000000000000
+      internalID: 6873120811589423525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f6eb71010da4ae80800000000000000
+      internalID: -8168213604311767309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d246c4bd8154dbb90800000000000000
+      internalID: -7224542254171659219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2af8c91b0249ad50800000000000000
+      internalID: 6748998132036074028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7aadf4f6dd6999b0800000000000000
+      internalID: -5072902735255459206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf16901d006b7730800000000000000
+      internalID: 3997894703450562493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94eadc63ee9c55330800000000000000
+      internalID: 3699084693913579081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecc990cdf2b7a79c0800000000000000
+      internalID: -3928692279442039602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c798fc1d10331350800000000000000
+      internalID: 5986181231303759817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc1b522191dd7bc0800000000000000
+      internalID: -3783637690644489000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 108195eba6f876e90800000000000000
+      internalID: -7032494604492924927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f4f609149539060800000000000000
+      internalID: 6959003987348508484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ad7eafe9d0b531f0800000000000000
+      internalID: -1065751286727672412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cdc69a3693c654f0800000000000000
+      internalID: -840269230462546488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_17
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0be9a5a4dd217600800000000000000
+      internalID: 464202627931564811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_18
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ddd6f21a9007bf0800000000000000
+      internalID: -328752184907932339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_19
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f022d8bd4222750800000000000000
+      internalID: 6278621355892150160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_20
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ec8807379af6b1f0800000000000000
+      internalID: -1029359937437266714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_21
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55485dbd87fd6f3d0800000000000000
+      internalID: -3173103177258662827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_22
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e132d04d6683470800000000000000
+      internalID: 8374556568034942505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_23
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a14d46ea09430b90800000000000000
+      internalID: -7276892261738266207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_24
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08a070687b010e00800000000000000
+      internalID: 1009100403149678604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_25
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5c2b0475191fd70800000000000000
+      internalID: 9075194528061900260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_26
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 841b5a652c28603b0800000000000000
+      internalID: -5546602119871221432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_27
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c74eb5bf0aa16260800000000000000
+      internalID: 7089134272908249025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_28
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f42b63dee2edf7d0800000000000000
+      internalID: -2882898671070141192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_29
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8664767e6a7de4ee0800000000000000
+      internalID: -1274844532652423576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ReloadingSheet_30
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4740c15c6d9752d20800000000000000
+      internalID: 3253140269181961332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 30b6ef01a68072642b2712e21f1bad1b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ReloadingSheet_0: 6950330100330285135
+      ReloadingSheet_1: -652629208030933066
+      ReloadingSheet_10: -3928692279442039602
+      ReloadingSheet_11: 5986181231303759817
+      ReloadingSheet_12: -3783637690644489000
+      ReloadingSheet_13: -7032494604492924927
+      ReloadingSheet_14: 6959003987348508484
+      ReloadingSheet_15: -1065751286727672412
+      ReloadingSheet_16: -840269230462546488
+      ReloadingSheet_17: 464202627931564811
+      ReloadingSheet_18: -328752184907932339
+      ReloadingSheet_19: 6278621355892150160
+      ReloadingSheet_2: 3512230866169535897
+      ReloadingSheet_20: -1029359937437266714
+      ReloadingSheet_21: -3173103177258662827
+      ReloadingSheet_22: 8374556568034942505
+      ReloadingSheet_23: -7276892261738266207
+      ReloadingSheet_24: 1009100403149678604
+      ReloadingSheet_25: 9075194528061900260
+      ReloadingSheet_26: -5546602119871221432
+      ReloadingSheet_27: 7089134272908249025
+      ReloadingSheet_28: -2882898671070141192
+      ReloadingSheet_29: -1274844532652423576
+      ReloadingSheet_3: 6873120811589423525
+      ReloadingSheet_30: 3253140269181961332
+      ReloadingSheet_4: -8168213604311767309
+      ReloadingSheet_5: -7224542254171659219
+      ReloadingSheet_6: 6748998132036074028
+      ReloadingSheet_7: -5072902735255459206
+      ReloadingSheet_8: 3997894703450562493
+      ReloadingSheet_9: 3699084693913579081
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

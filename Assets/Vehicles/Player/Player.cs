@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -43,6 +45,9 @@ public class Player : MonoBehaviour
     [SerializeField] float starting_hp = 3.0f;
     [SerializeField] AudioSource engineSound;
     [SerializeField] AudioSource treadsSound;
+    [SerializeField] Sprite lowHealthImage;
+    [SerializeField] Sprite medHealthImage;
+    [SerializeField] Image healthStatus;
     float maxTreadsVolume = .75f;
     float maxTreadsPitch = 1.3f;
     float treadsChangeRate = 3f;
@@ -228,6 +233,17 @@ public class Player : MonoBehaviour
         hp -= 1;
         Debug.Log("PLAYER HIT!");
         start_camera_shake(11.5f);
+
+        if (hp/3 <= 2.1 / 3)
+        {
+            healthStatus.sprite = medHealthImage;
+        }
+
+        if (hp/3 <= 1.1 / 3)
+        {
+            healthStatus.sprite = lowHealthImage;
+        }
+
         if (hp == 0)
         {
             engineSound.Stop();
@@ -269,13 +285,11 @@ public class Player : MonoBehaviour
     {
         if (Active)
         {
-            Debug.Log("INCREASING PITCH");
             treadsSound.pitch = Mathf.Min(treadsSound.pitch + (treadsChangeRate * maxTreadsPitch * Time.fixedDeltaTime), maxTreadsPitch);
             treadsSound.volume = Mathf.Min(treadsSound.volume + (treadsChangeRate * maxTreadsVolume * Time.fixedDeltaTime), maxTreadsVolume);
         }
         else
         {
-            Debug.Log("DECREASING PITCH");
             treadsSound.volume = Mathf.Max(treadsSound.volume - (treadsChangeRate * maxTreadsVolume * Time.fixedDeltaTime), 0f);
             treadsSound.pitch = Mathf.Max(treadsSound.pitch - (treadsChangeRate * maxTreadsPitch * Time.fixedDeltaTime), minTreadsPitch);
         }

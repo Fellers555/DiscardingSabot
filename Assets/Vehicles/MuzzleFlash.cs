@@ -4,7 +4,7 @@ using UnityEngine.InputSystem.Controls;
 public class MuzzleFlash : MonoBehaviour
 {
 
-    float lifetime = 9f;
+    float lifetime = 11f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

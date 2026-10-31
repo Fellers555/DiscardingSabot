@@ -5,4 +5,4 @@ Artist: Ferris Solano
 
 You can play the game on itch here: https://fellers555.itch.io/discarding-sabot-pre-alpha
 
-While this is a completed gameplay prototype we plan to continue development.
+This project was created while learning Unity. While this is a completed gameplay prototype we plan to continue development.

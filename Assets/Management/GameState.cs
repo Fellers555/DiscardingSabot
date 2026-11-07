@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
 
     [SerializeField] Player playersTank;
+    [SerializeField] private string nextScene = "";
     bool enemiesLeft = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +30,22 @@ public class GameState : MonoBehaviour
                 playerTank.updateEnemyCount(enemies.Length);
             }
         }
-        
+
+        //Process logic to switch scene
+        else
+        {
+            if (Keyboard.current.qKey.wasPressedThisFrame)
+            {
+                if (nextScene != "")
+                {
+                    SceneManager.LoadScene(nextScene);
+                }
+                else
+                {
+                    Debug.Log("INVALID SCENE TO LOAD ON GAMESTATE");
+                }
+
+            }
+        }
     }
 }

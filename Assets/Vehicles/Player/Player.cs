@@ -303,7 +303,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            HUD_ENEMYCOUNT.text = "ALL TARGETS DESTROYED";
+            HUD_ENEMYCOUNT.text = "ALL TARGETS DESTROYED - PRESS Q";
         }
     }
 }

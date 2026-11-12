@@ -75,4 +75,12 @@ public class EnemyTank : MonoBehaviour
         }
         return false;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out CrushableObject crushableObject))
+        {
+            crushableObject.crush(gameObject, 10f);
+        }
+    }
 }

@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
     Vector2 hull_velocity = Vector2.zero;
     float hull_rotation_velocity = 0f;
 
-    public enum STATUS {ALIVE, DEAD};
+    public enum STATUS { ALIVE, DEAD };
     public STATUS state = STATUS.ALIVE;
 
     //camera
@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
             }
 
 
-            HUD_HP.text = "ARMOR STATUS: " + MathF.Round(hp/starting_hp*100).ToString() + "%";
+            HUD_HP.text = "ARMOR STATUS: " + MathF.Round(hp / starting_hp * 100).ToString() + "%";
         }
         else
         {
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
         if (state == STATUS.ALIVE)
         {
             movement();
-            camera_actual_position = new Vector3(rigidBody.transform.position.x,rigidBody.transform.position.y,PlayerCamera.transform.position.z);
+            camera_actual_position = new Vector3(rigidBody.transform.position.x, rigidBody.transform.position.y, PlayerCamera.transform.position.z);
         }
         process_camera_shake();
     }
@@ -132,7 +132,7 @@ public class Player : MonoBehaviour
         if (Keyboard.current.dKey.IsPressed())
         {
             anyMovement = true;
-            desired_rotation = - hull_rotation_speed * Time.fixedDeltaTime;
+            desired_rotation = -hull_rotation_speed * Time.fixedDeltaTime;
         }
 
         if (Keyboard.current.aKey.IsPressed())
@@ -150,16 +150,16 @@ public class Player : MonoBehaviour
         if (Keyboard.current.wKey.IsPressed())
         {
             anyMovement = true;
-            desired_velocity = (transform.up.normalized * move_speed * Time.fixedDeltaTime);
+            desired_velocity = (transform.up.normalized * move_speed * 1.15f * Time.fixedDeltaTime);
         }
 
         if (Keyboard.current.sKey.IsPressed())
         {
             anyMovement = true;
-            desired_velocity = (transform.up.normalized * -move_speed * Time.fixedDeltaTime);
+            desired_velocity = (transform.up.normalized * -move_speed * .85f * Time.fixedDeltaTime);
         }
 
-        hull_velocity = Vector2.Lerp(hull_velocity,desired_velocity,Time.fixedDeltaTime * hull_acceleration);
+        hull_velocity = Vector2.Lerp(hull_velocity, desired_velocity, Time.fixedDeltaTime * hull_acceleration);
         rigidBody.MovePosition(new Vector2(transform.position.x, transform.position.y) + hull_velocity);
 
         treads_sound_processing(anyMovement);
@@ -180,7 +180,7 @@ public class Player : MonoBehaviour
                 turretAnim.SetBool("firing", true);
 
 
-                GameObject flash = GameObject.Instantiate(muzzleFlash,muzzle.transform);
+                GameObject flash = GameObject.Instantiate(muzzleFlash, muzzle.transform);
                 flash.transform.parent = muzzle.transform;
                 flash.transform.rotation = turret.transform.rotation;
                 flash.transform.position = muzzle.transform.position;
@@ -200,7 +200,7 @@ public class Player : MonoBehaviour
                     crosshairObj.start_reload();
                 }
             }
-            
+
         }
     }
     void process_mouseaim()
@@ -219,7 +219,7 @@ public class Player : MonoBehaviour
         Quaternion angle_quaternion = Quaternion.Euler(new Vector3(0, 0, angle));
 
         //execute rotation
-        turret.transform.rotation = Quaternion.RotateTowards(turret.transform.rotation,angle_quaternion,turret_rotation_speed * Time.deltaTime);
+        turret.transform.rotation = Quaternion.RotateTowards(turret.transform.rotation, angle_quaternion, turret_rotation_speed * Time.deltaTime);
 
         PlayerCamera.transform.position = save_cam_pos;
     }
@@ -234,12 +234,12 @@ public class Player : MonoBehaviour
         Debug.Log("PLAYER HIT!");
         start_camera_shake(11.5f);
 
-        if (hp/3 <= 2.1 / 3)
+        if (hp / 3 <= 2.1 / 3)
         {
             healthStatus.sprite = medHealthImage;
         }
 
-        if (hp/3 <= 1.1 / 3)
+        if (hp / 3 <= 1.1 / 3)
         {
             healthStatus.sprite = lowHealthImage;
         }
@@ -265,7 +265,7 @@ public class Player : MonoBehaviour
         PlayerCamera.transform.position = camera_actual_position;
         cam_shake_magnitude = MathF.Max(cam_shake_magnitude - (Time.fixedDeltaTime * 60 * shake_decrease_rate), 0f);
         float to_shake = cam_shake_magnitude / 50f;
-        PlayerCamera.transform.position += new Vector3(UnityEngine.Random.Range(-to_shake, to_shake),UnityEngine.Random.Range(-to_shake, to_shake),0);
+        PlayerCamera.transform.position += new Vector3(UnityEngine.Random.Range(-to_shake, to_shake), UnityEngine.Random.Range(-to_shake, to_shake), 0);
     }
 
     void emit_smoke()
@@ -277,7 +277,7 @@ public class Player : MonoBehaviour
             GameObject smoke_part = GameObject.Instantiate(smoke, null);
             smoke_part.transform.parent = null;
             smoke_part.transform.position = smokeEmitter.transform.position;
-            smoke_part.transform.rotation = Quaternion.Euler(turret.transform.rotation.eulerAngles + new Vector3(0,0,UnityEngine.Random.Range(0,360)));
+            smoke_part.transform.rotation = Quaternion.Euler(turret.transform.rotation.eulerAngles + new Vector3(0, 0, UnityEngine.Random.Range(0, 360)));
         }
     }
 
@@ -298,12 +298,21 @@ public class Player : MonoBehaviour
     public void updateEnemyCount(int _count)
     {
         enemyCount = _count;
-        if (enemyCount > 0) {
+        if (enemyCount > 0)
+        {
             HUD_ENEMYCOUNT.text = "TARGETS: " + enemyCount.ToString();
         }
         else
         {
             HUD_ENEMYCOUNT.text = "ALL TARGETS DESTROYED - PRESS Q";
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out CrushableObject crushableObject))
+        {
+            crushableObject.crush(gameObject, 10f);
         }
     }
 }

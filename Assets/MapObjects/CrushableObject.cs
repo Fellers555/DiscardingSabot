@@ -33,7 +33,6 @@ public class CrushableObject : MonoBehaviour
             {
                 if (useObjectRotation)
                 {
-                    Debug.Log("ROTTING");
                     transform.rotation = cause.transform.rotation;
                     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, 90));
                 }

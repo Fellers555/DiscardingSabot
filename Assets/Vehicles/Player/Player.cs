@@ -101,11 +101,6 @@ public class Player : MonoBehaviour
         }
 
         PlayerCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
-        // Restart test for debug
-        if (Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
 
     private void FixedUpdate()

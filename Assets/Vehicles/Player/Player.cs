@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     [SerializeField] float turret_rotation_speed = 20f;
     [SerializeField] float reload_rate = 180f;
     [SerializeField] AudioSource audioPlayer;
+    [SerializeField] AudioSource hitPlayer;
     [SerializeField] AudioClip firingSound;
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject muzzle;
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
     [SerializeField] Sprite lowHealthImage;
     [SerializeField] Sprite medHealthImage;
     [SerializeField] Image healthStatus;
+    [SerializeField] GameObject explosion;
     float maxTreadsVolume = .75f;
     float maxTreadsPitch = 1.3f;
     float treadsChangeRate = 3f;
@@ -222,8 +224,8 @@ public class Player : MonoBehaviour
     public void take_damage()
     {
 
-        audioPlayer.pitch = UnityEngine.Random.Range(.75f, .77f);
-        audioPlayer.PlayOneShot(impactSound);
+        hitPlayer.pitch = UnityEngine.Random.Range(.75f, .77f);
+        hitPlayer.PlayOneShot(impactSound);
 
         hp -= 1;
         Debug.Log("PLAYER HIT!");
@@ -244,6 +246,9 @@ public class Player : MonoBehaviour
             engineSound.Stop();
             treadsSound.Stop();
             state = STATUS.DEAD;
+            GameObject explos = GameObject.Instantiate(explosion);
+            explos.transform.parent = null;
+            explos.transform.position = transform.position;
         }
     }
 

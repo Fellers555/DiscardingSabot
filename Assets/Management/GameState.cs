@@ -7,6 +7,7 @@ using static EnemyTank;
 public class GameState : MonoBehaviour
 {
 
+    [SerializeField] bool isMenu = false;
     [SerializeField] Player playersTank;
     [SerializeField] private string nextScene = "";
     [SerializeField] private Image image;
@@ -55,7 +56,7 @@ public class GameState : MonoBehaviour
 
 
         //HANDLE KILLING ENEMIES AND ADVANCING
-        if (enemiesLeft) {
+        if (!isMenu && enemiesLeft) {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemies");
             if (enemies.Length == 0)
             {
@@ -71,17 +72,30 @@ public class GameState : MonoBehaviour
         //Process logic to switch scene
         else
         {
-            if (Keyboard.current.qKey.wasPressedThisFrame)
+            if (!isMenu)
             {
-                if (fadeFinished)
+                if (Keyboard.current.qKey.wasPressedThisFrame)
                 {
-                    startFadeOut(FADE_FINISH_ACTION.ADVANCE);
+                    if (fadeFinished)
+                    {
+                        startFadeOut(FADE_FINISH_ACTION.ADVANCE);
+                    }
+                }
+            }
+            else
+            {
+                if (Keyboard.current.spaceKey.wasPressedThisFrame)
+                {
+                    if (fadeFinished)
+                    {
+                        startFadeOut(FADE_FINISH_ACTION.ADVANCE);
+                    }
                 }
             }
         }
 
         //GLOBAL CHECK FOR LEVEL RESTART
-        if (Keyboard.current.rKey.wasPressedThisFrame)
+        if (!isMenu && Keyboard.current.rKey.wasPressedThisFrame)
         {
             if (fadeFinished)
             {

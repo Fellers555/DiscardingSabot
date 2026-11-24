@@ -326,6 +326,8 @@ MonoBehaviour:
   audioPlayer: {fileID: 839242690183312320}
   muzzleFlash: {fileID: 695071924352661498, guid: 8121d598339610f4b9bc96e9947014b7, type: 3}
   muzzle: {fileID: 1243784741764539190}
+  explosion: {fileID: 7781111561548185587, guid: 822e803749df4a447a17bf34191d72ab, type: 3}
+  corpse: {fileID: 299765156081048940, guid: 95ca4801b39deaa44ba5c0f5b66eaa99, type: 3}
   reload_rate: 180
 --- !u!50 &4244088709834618672
 Rigidbody2D:

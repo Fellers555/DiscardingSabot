@@ -12,8 +12,11 @@ public class smoke : MonoBehaviour
 
     float scale_track = 0f;
 
+    Color baseColor;
+
     void Start()
     {
+        baseColor = rendering.color;
         rendering.color = new Color(1, 1, 1, starting_opacity);
     }
 
@@ -23,7 +26,7 @@ public class smoke : MonoBehaviour
         scale_track = Mathf.Min(scale_track + scale_rate * Time.deltaTime, max_scale);
         transform.localScale = new Vector3(scale_track,scale_track,scale_track);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, 0, rotation_rate * Time.deltaTime));
-        rendering.color = new Color(1, 1, 1, rendering.color.a - (1-starting_opacity/(max_scale / scale_rate)) * Time.deltaTime);
+        rendering.color = new Color(baseColor.r, baseColor.g, baseColor.b, rendering.color.a - (1-starting_opacity/(max_scale / scale_rate)) * Time.deltaTime);
         if (scale_track == max_scale)
         {
             Destroy(gameObject);

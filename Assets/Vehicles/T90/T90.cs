@@ -30,6 +30,8 @@ public class T90 : EnemyTank
     [SerializeField] GameObject muzzleFlash;
     [SerializeField] GameObject muzzle;
 
+    [SerializeField] GameObject explosion;
+    [SerializeField] GameObject corpse;
     float firing_delay_timer = 35f;
 
     [SerializeField] float reload_rate = 180f;
@@ -201,6 +203,14 @@ public class T90 : EnemyTank
     {
         base.take_damage();
         Debug.Log("T90 DESTROYED!");
+        GameObject explos = GameObject.Instantiate(explosion);
+        explos.transform.parent = null;
+        explos.transform.position = transform.position;
+
+        GameObject corp = GameObject.Instantiate(corpse);
+        corp.transform.parent = null;
+        corp.transform.position = transform.position;
+        corp.transform.rotation = transform.rotation;
     }
 
     void emit_smoke()
